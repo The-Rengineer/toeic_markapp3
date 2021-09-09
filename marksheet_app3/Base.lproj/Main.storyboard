@@ -1,24 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="marksheet_app3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kvO-m6-n4X">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="zPI-an-Slz" customClass="markTVC" customModule="marksheet_app3" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zPI-an-Slz" id="ISf-DX-0rD">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="s4Q-qa-m1O">
+                                                    <rect key="frame" x="53" y="-0.5" width="308" height="44.5"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmv-AK-5eG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="aBB-Np-70B"/>
+                                                                <constraint firstAttribute="height" constant="44" id="cg1-8z-0cC"/>
+                                                            </constraints>
+                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="A"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcp-aW-GXI">
+                                                            <rect key="frame" x="66" y="0.0" width="44" height="44.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="07t-nb-YA0"/>
+                                                                <constraint firstAttribute="height" constant="44" id="9tl-3V-cR3"/>
+                                                            </constraints>
+                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="B"/>
+                                                            <connections>
+                                                                <action selector="markSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hLe-ZL-B8M"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUo-2c-yHn">
+                                                            <rect key="frame" x="132" y="0.0" width="44" height="44.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="UFg-BF-qFm"/>
+                                                                <constraint firstAttribute="height" constant="44" id="l1C-AV-OnL"/>
+                                                            </constraints>
+                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="C"/>
+                                                            <connections>
+                                                                <action selector="markSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fYM-4s-Rc6"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uK-S2-Lxs">
+                                                            <rect key="frame" x="198" y="0.0" width="44" height="44.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="44" id="7vd-1h-x9n"/>
+                                                                <constraint firstAttribute="height" constant="44" id="pih-Vi-VH8"/>
+                                                            </constraints>
+                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="D"/>
+                                                            <connections>
+                                                                <action selector="markSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pUs-b4-SDu"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFQ-2j-Wze">
+                                                            <rect key="frame" x="264" y="0.0" width="44" height="44.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="44" id="8Nt-9c-vbe"/>
+                                                                <constraint firstAttribute="width" constant="44" id="i5t-1V-4tU"/>
+                                                            </constraints>
+                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="?"/>
+                                                            <connections>
+                                                                <action selector="markSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ck-FH-pQj"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="s4Q-qa-m1O" firstAttribute="centerX" secondItem="ISf-DX-0rD" secondAttribute="centerX" id="8Pj-op-EhS"/>
+                                                <constraint firstItem="s4Q-qa-m1O" firstAttribute="centerY" secondItem="ISf-DX-0rD" secondAttribute="centerY" id="dST-nO-QGz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="markView" destination="s4Q-qa-m1O" id="QAo-BA-gnf"/>
+                                            <outletCollection property="markButtons" destination="Hmv-AK-5eG" collectionClass="NSMutableArray" id="46w-KB-jTP"/>
+                                            <outletCollection property="markButtons" destination="pcp-aW-GXI" collectionClass="NSMutableArray" id="MDc-Qb-8u2"/>
+                                            <outletCollection property="markButtons" destination="pcp-aW-GXI" collectionClass="NSMutableArray" id="xVt-rW-Gw1"/>
+                                            <outletCollection property="markButtons" destination="NUo-2c-yHn" collectionClass="NSMutableArray" id="Z5u-yB-hke"/>
+                                            <outletCollection property="markButtons" destination="5uK-S2-Lxs" collectionClass="NSMutableArray" id="DDd-St-QSP"/>
+                                            <outletCollection property="markButtons" destination="UFQ-2j-Wze" collectionClass="NSMutableArray" id="e6f-rh-ddV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kvO-m6-n4X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Chp-5F-XLi"/>
+                            <constraint firstItem="kvO-m6-n4X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hIF-rO-NuJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kvO-m6-n4X" secondAttribute="bottom" id="zgG-UB-aXB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kvO-m6-n4X" secondAttribute="trailing" id="zmw-7S-BdG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="kvO-m6-n4X" id="e1J-PJ-ZVf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="290" y="84"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
