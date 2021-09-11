@@ -10,8 +10,9 @@ import UIKit
 class markTVC: UITableViewCell {
     
     @IBOutlet weak var markView: UIStackView!
-    
     @IBOutlet var markButtons: [UIButton]!
+    @IBOutlet weak var questionNum: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
