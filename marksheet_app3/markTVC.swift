@@ -8,20 +8,37 @@
 import UIKit
 
 class markTVC: UITableViewCell {
-
+    
     @IBOutlet weak var markView: UIStackView!
     
     @IBOutlet var markButtons: [UIButton]!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        //add default style of markButtons themselves
+        markButtons.forEach({
+            $0.tintColor = .black
+            $0.backgroundColor = .white
+        })
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+    //マーク機能
+    @IBAction func markSelected(_ sender: UIButton) {
+        
+        if sender.tintColor == .black && sender.backgroundColor == .white {
+            markButtons.forEach({
+                $0.tintColor = .black
+                $0.backgroundColor = .white
+            })
+            sender.tintColor = .white
+            sender.backgroundColor = .black
+        } else if sender.tintColor == .white && sender.backgroundColor == .black {
+            markButtons.forEach({
+                $0.tintColor = .black
+                $0.backgroundColor = .white
+            })
+            sender.tintColor = .black
+            sender.backgroundColor = .white
+        }
     }
-
 }

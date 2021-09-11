@@ -38,6 +38,9 @@
                                                             </constraints>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="A"/>
+                                                            <connections>
+                                                                <action selector="markSelected:" destination="zPI-an-Slz" eventType="touchUpInside" id="h6u-tX-sTA"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcp-aW-GXI">
                                                             <rect key="frame" x="66" y="0.0" width="44" height="44.5"/>
@@ -48,7 +51,7 @@
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="B"/>
                                                             <connections>
-                                                                <action selector="markSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hLe-ZL-B8M"/>
+                                                                <action selector="markSelected:" destination="zPI-an-Slz" eventType="touchUpInside" id="2PD-ZH-Owp"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUo-2c-yHn">
@@ -60,7 +63,7 @@
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="C"/>
                                                             <connections>
-                                                                <action selector="markSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fYM-4s-Rc6"/>
+                                                                <action selector="markSelected:" destination="zPI-an-Slz" eventType="touchUpInside" id="7OQ-bh-owx"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uK-S2-Lxs">
@@ -72,7 +75,7 @@
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="D"/>
                                                             <connections>
-                                                                <action selector="markSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pUs-b4-SDu"/>
+                                                                <action selector="markSelected:" destination="zPI-an-Slz" eventType="touchUpInside" id="JgZ-Ox-aLt"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFQ-2j-Wze">
@@ -84,7 +87,7 @@
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="?"/>
                                                             <connections>
-                                                                <action selector="markSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ck-FH-pQj"/>
+                                                                <action selector="markSelected:" destination="zPI-an-Slz" eventType="touchUpInside" id="NH5-YF-Qlo"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -97,12 +100,11 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="markView" destination="s4Q-qa-m1O" id="QAo-BA-gnf"/>
-                                            <outletCollection property="markButtons" destination="Hmv-AK-5eG" collectionClass="NSMutableArray" id="46w-KB-jTP"/>
-                                            <outletCollection property="markButtons" destination="pcp-aW-GXI" collectionClass="NSMutableArray" id="MDc-Qb-8u2"/>
-                                            <outletCollection property="markButtons" destination="pcp-aW-GXI" collectionClass="NSMutableArray" id="xVt-rW-Gw1"/>
-                                            <outletCollection property="markButtons" destination="NUo-2c-yHn" collectionClass="NSMutableArray" id="Z5u-yB-hke"/>
-                                            <outletCollection property="markButtons" destination="5uK-S2-Lxs" collectionClass="NSMutableArray" id="DDd-St-QSP"/>
-                                            <outletCollection property="markButtons" destination="UFQ-2j-Wze" collectionClass="NSMutableArray" id="e6f-rh-ddV"/>
+                                            <outletCollection property="markButtons" destination="Hmv-AK-5eG" collectionClass="NSMutableArray" id="NbC-W4-i29"/>
+                                            <outletCollection property="markButtons" destination="pcp-aW-GXI" collectionClass="NSMutableArray" id="jNF-ac-61L"/>
+                                            <outletCollection property="markButtons" destination="NUo-2c-yHn" collectionClass="NSMutableArray" id="vfc-7B-MYk"/>
+                                            <outletCollection property="markButtons" destination="5uK-S2-Lxs" collectionClass="NSMutableArray" id="5Jg-4P-ujs"/>
+                                            <outletCollection property="markButtons" destination="UFQ-2j-Wze" collectionClass="NSMutableArray" id="ZNI-We-dla"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

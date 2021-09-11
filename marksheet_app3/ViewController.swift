@@ -16,17 +16,6 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-    var buttonArray: [UIButton] = []
-    
-    @IBAction func markSelected(_ sender: UIButton) {
-        buttonArray.forEach({
-            $0.tintColor = .black
-            $0.backgroundColor = .white
-        })
-        sender.tintColor = .white
-        sender.backgroundColor = .black
-    }
 }
 
 extension ViewController: UITableViewDelegate {
@@ -44,7 +33,7 @@ extension ViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! markTVC
         
-        //add default style of markButtons
+        //add default style of cell not markButtons themselves
         for i in 0 ..< cell.markButtons.count {
             cell.markButtons[i].layer.borderWidth = 1
             cell.markButtons[i].layer.borderColor = UIColor.black.cgColor
