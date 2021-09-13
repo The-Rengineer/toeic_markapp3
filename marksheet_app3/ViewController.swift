@@ -59,7 +59,6 @@ class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     //問題数
     let totalQuestionNum = 100
-    var questionIndexNum = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,12 +150,16 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! markTVC
         
         //the index number for each questions as labels
-        //スクロールするとインデックス番号が変わってしまうのが問題
-        if questionIndexNum <= totalQuestionNum {
-            let qNumStr:String = String(questionIndexNum)
-            cell.questionNum.text = qNumStr
-            questionIndexNum += 1
+        let questionIndexNum:String = String(indexPath.row + 1)
+        cell.questionNum.text = questionIndexNum
+        
+        //change the color once a row
+        if (indexPath.row == 0 || indexPath.row % 2 == 0) {
+            cell.backgroundColor = UIColor(named: "firstCellBGC")
+        } else {
+            cell.backgroundColor = .white
         }
+
        
         //add default style of cell not markButtons themselves
         for i in 0 ..< cell.markButtons.count {
@@ -167,14 +170,8 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
     
-    //一行ごとにセルの色を変える
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if (indexPath.row == 0 || indexPath.row % 2 == 0) {
-//            cell.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha:0.8)
-            cell.backgroundColor = UIColor(named: "firstCellBGC")
-        }
 
-    }
+
     
 }
 
