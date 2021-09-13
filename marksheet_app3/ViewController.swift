@@ -55,22 +55,21 @@ class ViewController: UIViewController {
         
     }
     
-    
-    
-    
     //マーク機能
     @IBOutlet var tableView: UITableView!
     //問題数
     let totalQuestionNum = 100
-    var questionIndexNum = 0
+    var questionIndexNum = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timeLabel.text = stringtime().text
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
+    //タイマー機能
     @objc func timer(){
         //残り時間がなくなったら、アラートを出し、時間を元に戻す。startButtonをStartへ
         if (time[0] == 0 && time[1] == 0) {
@@ -81,7 +80,7 @@ class ViewController: UIViewController {
             present(alert, animated: true, completion: nil)
             
             //タイマーを初期値に戻し、startButtonをStartへ
-           reset()
+            reset()
             
         } else {
             if time[1] > 0 {
@@ -129,18 +128,12 @@ class ViewController: UIViewController {
     }
     
     func alertMessage(alertMessage: String) -> UIAlertController {
-       return UIAlertController(title: alertMessage, message: "", preferredStyle:  UIAlertController.Style.alert)
+        return UIAlertController(title: alertMessage, message: "", preferredStyle:  UIAlertController.Style.alert)
     }
-    
-    
-    
-    
 }
 
-
-
-
 //マーク機能
+
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped me!")
@@ -152,16 +145,19 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return totalQuestionNum
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! markTVC
         
         //the index number for each questions as labels
-        questionIndexNum += 1
-        let qNumStr:String = String(questionIndexNum)
-        cell.questionNum.text = qNumStr
-        
-        
+        //スクロールするとインデックス番号が変わってしまうのが問題
+        if questionIndexNum <= totalQuestionNum {
+            let qNumStr:String = String(questionIndexNum)
+            cell.questionNum.text = qNumStr
+            questionIndexNum += 1
+        }
+       
         //add default style of cell not markButtons themselves
         for i in 0 ..< cell.markButtons.count {
             cell.markButtons[i].layer.borderWidth = 1
@@ -170,5 +166,15 @@ extension ViewController: UITableViewDataSource {
         }
         return cell
     }
+    
+    //一行ごとにセルの色を変える
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if (indexPath.row == 0 || indexPath.row % 2 == 0) {
+//            cell.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha:0.8)
+            cell.backgroundColor = UIColor(named: "firstCellBGC")
+        }
+
+    }
+    
 }
 
