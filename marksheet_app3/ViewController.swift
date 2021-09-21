@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
     
     //タイマー機能
     //timerの時間(,00分,05秒)、本来なら75:00
@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
+    
+    
     
     @IBAction func startCount(_ sender: Any) {
         //startButtonの文字がStart or Restartならカウントダウン、startButtonをStopへ
@@ -63,6 +65,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timeLabel.text = stringtime().text
+        startButton.layer.cornerRadius = 10
+        resetButton.layer.cornerRadius = 10
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -132,13 +136,6 @@ class ViewController: UIViewController {
 }
 
 //マーク機能
-
-extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped me!")
-    }
-}
-
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -147,6 +144,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+//        print(indexPath.row)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! markTVC
         
         //the index number for each questions as labels
@@ -154,24 +152,24 @@ extension ViewController: UITableViewDataSource {
         cell.questionNum.text = questionIndexNum
         
         //change the color once a row
-        if (indexPath.row == 0 || indexPath.row % 2 == 0) {
+        if (indexPath.row % 2 == 0) {
             cell.backgroundColor = UIColor(named: "firstCellBGC")
         } else {
             cell.backgroundColor = .white
         }
 
        
-        //add default style of cell not markButtons themselves
+        //add default style of markButtons themselves not cell itself
+        //★The mark color automatically disappear when scrolling to the top★
         for i in 0 ..< cell.markButtons.count {
             cell.markButtons[i].layer.borderWidth = 1
             cell.markButtons[i].layer.borderColor = UIColor.black.cgColor
             cell.markButtons[i].layer.cornerRadius = 22
+            cell.markButtons[i].tintColor = .black
+            cell.markButtons[i].backgroundColor = .white
+
         }
         return cell
     }
-    
-
-
-    
 }
 

@@ -16,13 +16,8 @@ class markTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //add default style of markButtons themselves
-        markButtons.forEach({
-            $0.tintColor = .black
-            $0.backgroundColor = .white
-        })
     }
-        
+    
     //マーク機能
     @IBAction func markSelected(_ sender: UIButton) {
         
