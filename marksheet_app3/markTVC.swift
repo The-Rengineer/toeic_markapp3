@@ -18,6 +18,16 @@ class markTVC: UITableViewCell {
         super.awakeFromNib()
     }
     
+    func markDesign(){
+        markButtons.forEach({
+            $0.tintColor = .black
+            $0.backgroundColor = .white
+            $0.layer.borderWidth = 1
+            $0.layer.borderColor = UIColor.black.cgColor
+            $0.layer.cornerRadius = 22
+        })
+    }
+    
     //マーク機能
     @IBAction func markSelected(_ sender: UIButton) {
         
@@ -35,6 +45,13 @@ class markTVC: UITableViewCell {
             })
             sender.tintColor = .black
             sender.backgroundColor = .white
+        } else if sender.tintColor == .black  {
+            markButtons.forEach({
+                $0.tintColor = .black
+                $0.backgroundColor = .white
+            })
+            sender.tintColor = .white
+            sender.backgroundColor = .black
         }
     }
 }

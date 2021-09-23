@@ -144,7 +144,7 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        print(indexPath.row)
+        //        print(indexPath.row)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! markTVC
         
         //the index number for each questions as labels
@@ -157,18 +157,11 @@ extension ViewController: UITableViewDataSource {
         } else {
             cell.backgroundColor = .white
         }
-
-       
+        
         //add default style of markButtons themselves not cell itself
         //★The mark color automatically disappear when scrolling to the top★
-        for i in 0 ..< cell.markButtons.count {
-            cell.markButtons[i].layer.borderWidth = 1
-            cell.markButtons[i].layer.borderColor = UIColor.black.cgColor
-            cell.markButtons[i].layer.cornerRadius = 22
-            cell.markButtons[i].tintColor = .black
-            cell.markButtons[i].backgroundColor = .white
-
-        }
+        cell.markDesign()
+                
         return cell
     }
 }
