@@ -45,13 +45,6 @@ class markTVC: UITableViewCell {
             })
             sender.tintColor = .black
             sender.backgroundColor = .white
-        } else if sender.tintColor == .black  {
-            markButtons.forEach({
-                $0.tintColor = .black
-                $0.backgroundColor = .white
-            })
-            sender.tintColor = .white
-            sender.backgroundColor = .black
         }
     }
 }

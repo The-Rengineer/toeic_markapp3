@@ -138,28 +138,28 @@ class ViewController: UIViewController, UITableViewDelegate {
 //マーク機能
 extension ViewController: UITableViewDataSource {
     
+    //画面に表示するセル(リスト)の数を指定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return totalQuestionNum
     }
     
+    //セルに値を設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        //        print(indexPath.row)
+        //markTVC.swiftからcellを取得
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! markTVC
         
-        //the index number for each questions as labels
+        //markTVCのlabelを取得し、セルの数だけ番号を順にふる（文字列へ変換含む）
         let questionIndexNum:String = String(indexPath.row + 1)
         cell.questionNum.text = questionIndexNum
         
-        //change the color once a row
+        //cellの背景を1行おきに白とグレーにする
         if (indexPath.row % 2 == 0) {
             cell.backgroundColor = UIColor(named: "firstCellBGC")
         } else {
             cell.backgroundColor = .white
         }
         
-        //add default style of markButtons themselves not cell itself
-        //★The mark color automatically disappear when scrolling to the top★
+        //cell内のボタンにスタイルを当てる
         cell.markDesign()
                 
         return cell
