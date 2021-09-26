@@ -124,10 +124,10 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="20d-M9-PbJ">
-                                <rect key="frame" x="0.0" y="98" width="414" height="140"/>
+                                <rect key="frame" x="0.0" y="158" width="414" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2G-u7-pvh">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -138,7 +138,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="53" translatesAutoresizingMaskIntoConstraints="NO" id="efR-OM-31w">
-                                <rect key="frame" x="80.5" y="93" width="253" height="30"/>
+                                <rect key="frame" x="80.5" y="133" width="253" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKH-gS-xSH">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
@@ -177,8 +177,8 @@
                             <constraint firstItem="kvO-m6-n4X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Chp-5F-XLi"/>
                             <constraint firstItem="kvO-m6-n4X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="Qay-2Z-Ty7"/>
                             <constraint firstItem="kvO-m6-n4X" firstAttribute="top" secondItem="20d-M9-PbJ" secondAttribute="bottom" id="RAA-8S-vmq"/>
-                            <constraint firstItem="20d-M9-PbJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-280" id="WO6-6D-Ytz"/>
-                            <constraint firstItem="efR-OM-31w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-340" id="X41-VO-vOG"/>
+                            <constraint firstItem="20d-M9-PbJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-250" id="WO6-6D-Ytz"/>
+                            <constraint firstItem="efR-OM-31w" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-300" id="X41-VO-vOG"/>
                             <constraint firstItem="efR-OM-31w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vLM-7U-D6y"/>
                             <constraint firstItem="20d-M9-PbJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y1P-um-jnn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kvO-m6-n4X" secondAttribute="bottom" id="zgG-UB-aXB"/>

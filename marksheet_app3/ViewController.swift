@@ -10,16 +10,13 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate {
     
     //タイマー機能
-    //timerの時間(,00分,05秒)、本来なら75:00
-    var time: [Int] = [45,00]
+    var time: [Int] = [05,00]
     //Timer#scheduledTimerの値を共通して保持できる
     var timers = Timer()
     
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
-    
-    
     
     @IBAction func startCount(_ sender: Any) {
         //startButtonの文字がStart or Restartならカウントダウン、startButtonをStopへ
@@ -59,7 +56,6 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     //マーク機能
     @IBOutlet var tableView: UITableView!
-    //問題数
     let totalQuestionNum = 100
     
     override func viewDidLoad() {
@@ -69,10 +65,8 @@ class ViewController: UIViewController, UITableViewDelegate {
         resetButton.layer.cornerRadius = 10
         tableView.delegate = self
         tableView.dataSource = self
-        
     }
     
-    //タイマー機能
     @objc func timer(){
         //残り時間がなくなったら、アラートを出し、時間を元に戻す。startButtonをStartへ
         if (time[0] == 0 && time[1] == 0) {
@@ -81,10 +75,8 @@ class ViewController: UIViewController, UITableViewDelegate {
             let defaultAction = UIAlertAction(title: "OK", style: .default)
             alert.addAction(defaultAction)
             present(alert, animated: true, completion: nil)
-            
             //タイマーを初期値に戻し、startButtonをStartへ
             reset()
-            
         } else {
             if time[1] > 0 {
                 //秒数が0以上の時秒数を-1
@@ -125,7 +117,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         //タイマーを初期値に戻し、startButtonをStartへ
         timers.invalidate()
         timers = Timer()
-        time = [45,00]
+        time = [05,00]
         timeLabel.text = stringtime().text
         startButton.setTitle("Start", for: .normal)
     }
@@ -138,7 +130,7 @@ class ViewController: UIViewController, UITableViewDelegate {
 //マーク機能
 extension ViewController: UITableViewDataSource {
     
-    //画面に表示するセル(リスト)の数を指定
+    //画面に表示するセル(リスト)の数を指定 == 100問
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return totalQuestionNum
     }
@@ -149,8 +141,12 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! markTVC
         
         //markTVCのlabelを取得し、セルの数だけ番号を順にふる（文字列へ変換含む）
+        
         let questionIndexNum:String = String(indexPath.row + 1)
         cell.questionNum.text = questionIndexNum
+        
+        //print(indexPath.row + 1)
+        print(questionIndexNum)
         
         //cellの背景を1行おきに白とグレーにする
         if (indexPath.row % 2 == 0) {
@@ -159,9 +155,7 @@ extension ViewController: UITableViewDataSource {
             cell.backgroundColor = .white
         }
         
-        //cell内のボタンにスタイルを当てる
         cell.markDesign()
-                
         return cell
     }
 }

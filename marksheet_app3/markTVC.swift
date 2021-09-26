@@ -13,11 +13,7 @@ class markTVC: UITableViewCell {
     @IBOutlet var markButtons: [UIButton]!
     @IBOutlet weak var questionNum: UILabel!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
+    //再利用されるたびに以下のメソッドが適用される
     func markDesign(){
         markButtons.forEach({
             $0.tintColor = .black
@@ -27,7 +23,7 @@ class markTVC: UITableViewCell {
             $0.layer.cornerRadius = 22
         })
     }
-    
+
     //マーク機能
     @IBAction func markSelected(_ sender: UIButton) {
         
@@ -45,6 +41,10 @@ class markTVC: UITableViewCell {
             })
             sender.tintColor = .black
             sender.backgroundColor = .white
-        }
+        } 
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 }
