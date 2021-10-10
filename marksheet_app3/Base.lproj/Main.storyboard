@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jfE-bZ-B3B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jfE-bZ-B3B">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,7 +23,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="60" id="zPI-an-Slz" customClass="markTVC" customModule="marksheet_app3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zPI-an-Slz" id="ISf-DX-0rD">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -41,7 +42,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmv-AK-5eG">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmv-AK-5eG">
                                                             <rect key="frame" x="66" y="0.0" width="44" height="52"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="44" id="F1h-oO-sQF"/>
@@ -53,7 +54,7 @@
                                                                 <action selector="markSelected:" destination="zPI-an-Slz" eventType="touchUpInside" id="h6u-tX-sTA"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcp-aW-GXI">
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcp-aW-GXI">
                                                             <rect key="frame" x="132" y="0.0" width="44" height="52"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="44" id="Kdb-PR-6DK"/>
@@ -65,7 +66,7 @@
                                                                 <action selector="markSelected:" destination="zPI-an-Slz" eventType="touchUpInside" id="2PD-ZH-Owp"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUo-2c-yHn">
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUo-2c-yHn">
                                                             <rect key="frame" x="198" y="0.0" width="44" height="52"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="44" id="PEp-GX-F6o"/>
@@ -77,7 +78,7 @@
                                                                 <action selector="markSelected:" destination="zPI-an-Slz" eventType="touchUpInside" id="7OQ-bh-owx"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uK-S2-Lxs">
+                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uK-S2-Lxs">
                                                             <rect key="frame" x="264" y="0.0" width="44" height="52"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="44" id="aab-mJ-k4B"/>
@@ -89,7 +90,7 @@
                                                                 <action selector="markSelected:" destination="zPI-an-Slz" eventType="touchUpInside" id="JgZ-Ox-aLt"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFQ-2j-Wze">
+                                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFQ-2j-Wze">
                                                             <rect key="frame" x="330" y="0.0" width="44" height="52"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="44" id="u90-tz-8Eq"/>
@@ -122,6 +123,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="lFu-Sn-3tN"/>
+                                </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="20d-M9-PbJ">
                                 <rect key="frame" x="0.0" y="158" width="414" height="80"/>
@@ -197,7 +201,7 @@
             </objects>
             <point key="canvasLocation" x="2350.7246376811595" y="67.633928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--TOEIC Test-->
         <scene sceneID="7D3-jL-ZyI">
             <objects>
                 <viewController id="t79-d6-Goi" sceneMemberID="viewController">
@@ -205,23 +209,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mR-t2-qFS">
-                                <rect key="frame" x="110" y="421" width="195" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Reading">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="7zT-Yh-yap"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="cGb-5e-V7N">
+                                <rect key="frame" x="30" y="328" width="354" height="294"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsw-gd-m4U">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Listening">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mR-t2-qFS">
+                                        <rect key="frame" x="0.0" y="123" width="354" height="48"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Reading">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="7zT-Yh-yap"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyH-bY-yp4">
+                                        <rect key="frame" x="0.0" y="246" width="354" height="48"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Setting">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AaR-tu-kpH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cGb-5e-V7N" firstAttribute="centerY" secondItem="IEh-GQ-2xL" secondAttribute="centerY" id="0W4-N5-Tj7"/>
+                            <constraint firstItem="AaR-tu-kpH" firstAttribute="trailing" secondItem="cGb-5e-V7N" secondAttribute="trailing" constant="30" id="Vzy-Oy-hal"/>
+                            <constraint firstItem="cGb-5e-V7N" firstAttribute="leading" secondItem="AaR-tu-kpH" secondAttribute="leading" constant="30" id="fCK-S9-bEQ"/>
+                            <constraint firstItem="cGb-5e-V7N" firstAttribute="top" secondItem="AaR-tu-kpH" secondAttribute="top" constant="240" id="fg7-rs-O30"/>
+                            <constraint firstItem="AaR-tu-kpH" firstAttribute="bottom" secondItem="cGb-5e-V7N" secondAttribute="bottom" constant="240" id="iLv-R8-Pw6"/>
+                            <constraint firstItem="cGb-5e-V7N" firstAttribute="centerX" secondItem="IEh-GQ-2xL" secondAttribute="centerX" id="s7h-Wg-WlK"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qmf-Th-Epb">
+                    <navigationItem key="navigationItem" title="TOEIC Test" id="qmf-Th-Epb">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="orU-Ay-PDM"/>
                         <barButtonItem key="rightBarButtonItem" id="Eax-6P-B8P"/>
                     </navigationItem>
                 </viewController>
@@ -257,7 +290,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

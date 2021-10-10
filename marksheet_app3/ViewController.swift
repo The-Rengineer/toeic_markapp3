@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //タイマー機能
     var time: [Int] = [05,00]
@@ -56,7 +56,6 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     //マーク機能
     @IBOutlet var tableView: UITableView!
-    let totalQuestionNum = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,14 +124,12 @@ class ViewController: UIViewController, UITableViewDelegate {
     func alertMessage(alertMessage: String) -> UIAlertController {
         return UIAlertController(title: alertMessage, message: "", preferredStyle:  UIAlertController.Style.alert)
     }
-}
-
-//マーク機能
-extension ViewController: UITableViewDataSource {
     
+    //マーク機能
     //画面に表示するセル(リスト)の数を指定 == 100問
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return totalQuestionNum
+//        return totalQuestionNum
+        return 100
     }
     
     //セルに値を設定
@@ -141,12 +138,10 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! markTVC
         
         //markTVCのlabelを取得し、セルの数だけ番号を順にふる（文字列へ変換含む）
+        cell.questionNum.text = String(indexPath.row + 1)
+         
         
-        let questionIndexNum:String = String(indexPath.row + 1)
-        cell.questionNum.text = questionIndexNum
-        
-        //print(indexPath.row + 1)
-        print(questionIndexNum)
+//        print(questionIndexNum)
         
         //cellの背景を1行おきに白とグレーにする
         if (indexPath.row % 2 == 0) {
@@ -154,9 +149,11 @@ extension ViewController: UITableViewDataSource {
         } else {
             cell.backgroundColor = .white
         }
-        
-        cell.markDesign()
         return cell
     }
 }
+
+
+
+
 
