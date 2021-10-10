@@ -53,6 +53,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         present(alert, animated: true, completion: nil)
         
     }
+
+    // Data source for TableView cells; parameter count is equivalent to the number of questions
+    let data = [Int](count: 100, repeatedValue: -1)
     
     //マーク機能
     @IBOutlet var tableView: UITableView!
@@ -62,6 +65,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         timeLabel.text = stringtime().text
         startButton.layer.cornerRadius = 10
         resetButton.layer.cornerRadius = 10
+        // register the class for the table's cells as "markTVC" — this tells the TableView what class you'll be using as its cells; could also be done with a UINib
+        tableView.register(markTVC, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -134,8 +139,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //セルに値を設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        func dataHandler(tag: Int) {
+            data[indexPath.row] = tag
+        }
         //markTVC.swiftからcellを取得
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! markTVC
+        cell.currSelected = data[indexPath.row]
+        cell.handleStateChanged = dataHandler
+        cell.markDesign()
         
         //markTVCのlabelを取得し、セルの数だけ番号を順にふる（文字列へ変換含む）
         cell.questionNum.text = String(indexPath.row + 1)

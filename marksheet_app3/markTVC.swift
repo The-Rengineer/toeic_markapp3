@@ -12,6 +12,9 @@ class markTVC: UITableViewCell {
     @IBOutlet weak var markView: UIStackView!
     @IBOutlet var markButtons: [UIButton]!
     @IBOutlet weak var questionNum: UILabel!
+
+    // integer equivalent to the currently selected option; equal to -1 if none is selected
+    var currSelected: Int
     
     //reusablecell確認
     static var count = 0
@@ -37,18 +40,29 @@ class markTVC: UITableViewCell {
     
     //再利用されるたびに以下のメソッドが適用される
     func markDesign(){
-        markButtons.forEach({
-            $0.tintColor = .black
-            $0.backgroundColor = .white
-            $0.layer.borderWidth = 1
-            $0.layer.borderColor = UIColor.black.cgColor
-            $0.layer.cornerRadius = 22
-        })
+        // Persist state passed in from data source
+        for (index, button) in markButtons.enumerated() {
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.black.cgColor
+            button.layer.cornerRadius = 22
+            if index == currSelected {
+                button.tintColor = .black
+                button.backgroundColor = .white
+            } else {
+                button.tintColor = .white
+                button.backgroundColor = .black
+            }
+        }
+    }
+
+    func handleStateChanged(tag: Int) {
+        print("cell [handleStateChanged] function should be overridden from the data source")
     }
     
     //マーク機能
     @IBAction func markSelected(_ sender: UIButton) {
-        
+        handleStateChanged(sender.tag)
+
         if sender.tintColor == .black && sender.backgroundColor == .white {
             markButtons.forEach({
                 $0.tintColor = .black
